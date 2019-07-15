@@ -2,6 +2,8 @@ var music = [];
 
 var categories = [];
 
+var MusicaTocando;
+
 function addCategories(tipo){
   var newCat = {tipo : tipo, visible: 1};
   categories.push(newCat);
@@ -117,7 +119,7 @@ function editCate(){
           var htmlBol = "<div class='bol bolactive'><i class='fas fa-check'></i></div>"
         } else{
           var htmlBol = "<div class='bol'></div>";
-    }
+      }
     $(this).html(htmlBol + categories[id].tipo);
   });
 }
@@ -182,8 +184,12 @@ function enterAlbum(){
 }
 
 var tocando = false;
+var naoTocouNada = true;
 
   $(".bottom #play").click(function(){
+  if(naoTocouNada){
+    randomMusic();
+  } else{
   if(tocando){
     document.getElementById("my-player").pause();
     $("#play").html('<i class="fas fa-play"></i>');
@@ -193,7 +199,77 @@ var tocando = false;
     $("#play").html('<i class="fas fa-pause"></i>');
     tocando = true;
   }
+  }
     });
+
+function randomMusic(){
+  tocando = true;
+  naoTocouNada = false;
+  var musicRandom = Math.floor(Math.random() * music.length);
+  MusicaTocando = musicRandom;
+  $(".app .playNow .img").css("background-image", "url('"+ music[musicRandom].banner+"')");
+    $(".app .playNow #musica").html(music[musicRandom].nome);
+    document.getElementById("my-player").pause();
+    document.getElementById("my-player").setAttribute('src', music[musicRandom].mp3);
+    document.getElementById("my-player").load();
+    document.getElementById("my-player").play();
+    $("#play").html('<i class="fas fa-pause"></i>');
+}
+
+function nextMusic(){
+  var aud = document.getElementById("my-player");
+  var novaMusica = 1;
+  aud.onended = function() {
+    if(MusicaTocando >= music.length - 1){
+      novaMusica = 0;
+    } else{
+      novaMusica = MusicaTocando + 1;
+    }
+      MusicaTocando = novaMusica;
+      $(".app .playNow .img").css("background-image", "url('"+music[novaMusica].banner+"')");
+      $(".app .playNow #musica").html(music[novaMusica].nome);
+      document.getElementById("my-player").pause();
+      document.getElementById("my-player").setAttribute('src', music[novaMusica].mp3);
+      document.getElementById("my-player").load();
+      document.getElementById("my-player").play();
+      $("#play").html('<i class="fas fa-pause"></i>');
+  };
+}
+
+$("#proximaMusica").click(function(){
+      if(tocando){
+      var aud = document.getElementById("my-player");
+      var novaMusica = 1;
+      if(MusicaTocando >= music.length - 1){
+        novaMusica = 1;
+      } else{
+        novaMusica = MusicaTocando + 1;
+      }
+      var playPromise = aud.play();
+ 
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          // Automatic playback started!
+          // Show playing UI.
+          // We can now safely pause video...
+          aud.pause();
+        })
+        .catch(error => {
+          // Auto-play was prevented
+          // Show paused UI.
+        });
+      }
+      MusicaTocando = novaMusica;
+      $(".app .playNow .img").css("background-image", "url('"+music[novaMusica].banner+"')");
+      $(".app .playNow #musica").html(music[novaMusica].nome);
+      document.getElementById("my-player").pause();
+      document.getElementById("my-player").setAttribute('src', music[novaMusica].mp3);
+      document.getElementById("my-player").load();
+      document.getElementById("my-player").play();
+      $("#play").html('<i class="fas fa-pause"></i>');
+      tocando = true;
+      }
+});
 
 function showMusicAlbum(albumName, id){
   console.log(albumName);
@@ -211,8 +287,10 @@ function showMusicAlbum(albumName, id){
 
 function playMusic(){
   $(".app .novaAba .musiclist a").click(function(){
+    naoTocouNada = false;
     tocando = true;
     var idMusica = $(this).data("id");
+    MusicaTocando = {id: idMusica};
     $(".app .playNow .img").css("background-image", "url('"+ music[idMusica].banner+"')");
     $(".app .playNow #musica").html(music[idMusica].nome);
     document.getElementById("my-player").pause();
@@ -231,7 +309,8 @@ $(document).ready(function(){
   editar();
   addM();
   addInHtmlMusic();
-  enterAlbum(); 
+  enterAlbum();
+  nextMusic();
 });
 
 var player = document.getElementById('my-player');    
