@@ -246,19 +246,6 @@ $("#proximaMusica").click(function(){
         novaMusica = MusicaTocando + 1;
       }
       var playPromise = aud.play();
- 
-      if (playPromise !== undefined) {
-        playPromise.then(_ => {
-          // Automatic playback started!
-          // Show playing UI.
-          // We can now safely pause video...
-          aud.pause();
-        })
-        .catch(error => {
-          // Auto-play was prevented
-          // Show paused UI.
-        });
-      }
       MusicaTocando = novaMusica;
       $(".app .playNow .img").css("background-image", "url('"+music[novaMusica].banner+"')");
       $(".app .playNow #musica").html(music[novaMusica].nome);
