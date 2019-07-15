@@ -1,0 +1,331 @@
+:root{
+  --font: #f50f57;
+}
+
+body,html{
+  background: #151515;
+  font-family: arial;
+}
+
+:-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: transparent;
+}
+
+a{
+  color: var(--font);
+  text-decoration: none;
+}
+
+.app{
+  overflow: hidden !important;
+}
+
+.app .editar{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 18px;
+  z-index: 100;
+}
+
+.app{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 100%;
+  background: #fff;
+}
+
+.app .bibli{
+  padding: 25px;
+  margin-top: 40px;
+  font-size: 28px;
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  z-index: 2000;
+  transition: 0.2s cubic-bezier(0.005, 0.625, 0.365, 0.0840);
+  cursor: pointer;
+}
+
+.app .white{
+  background: #fff;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  z-index: 100;
+}
+
+.app .list{
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.app .list a{
+  width: 335px;
+  position: relative;
+  display: block;
+  font-size: 22px;
+  margin: 10px;
+  left: 15px;
+  color: var(--font);
+  text-decoration: none;
+  padding: 5px;
+  border-bottom: 1px solid rgba(0,0,0,.10);
+}
+
+.todo{
+  transition: 3s cubic-bezier(0.005, 0.625, 0.365, 0.0840);
+  z-index: 0;
+  height: 65%;
+  position: absolute;
+  cursor: pointer;
+  overflow-y: auto !important;
+}
+
+.app .recentes h1{
+  font-size: 22px;
+  padding: 25px;
+}
+
+.app .recentes{
+  position: relative;
+}
+
+.app .novaAba{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: 1000;
+  top: 120px;
+  left: 200%;
+  transition: 0.2s cubic-bezier(0.005, 0.625, 0.365, 0.0840);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.app .novaAba h1{
+  padding: 25px;
+  position: relative;
+  top: -45px;
+}
+
+.app .list a .bol{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  left: -30px;
+  top: 8px;
+  border: 1px solid rgba(0,0,0,.20);
+}
+
+.app .list a .bolactive{
+  background-color: var(--font);
+  color: #fff;
+}
+
+.app .list a .bolactive i{
+  font-size: 12px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.todo{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.app .bottom{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,.15);
+  z-index: 2000;
+}
+
+.app .bottom .playNow{
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,.15);
+  position: absolute;
+  top: 0px;
+  z-index: 2000;
+}
+
+.img{
+  width: 40px;
+  height: 40px;
+  background: #555;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  background-image: url('https://www.musicdot.com.br/assets/api/share/musicdot.jpg');
+  background-size: cover;
+  border-radius: 2px;
+}
+
+.app .bottom .playNow span{
+  position: absolute;
+  left: 20%;
+  top: 20px;
+  font-size: 16px;
+}
+
+.app .bottom .playNow .icons{
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  font-size: 22px;
+}
+
+.app .bottom .playNow .icons i{
+  margin-left: 15px;
+}
+
+.opacity{
+  opacity: 0.5;
+}
+
+.plus{
+  font-size: 24px;
+}
+
+.app .albums .album{
+  width: 140px;
+  height: 140px;
+  background-size: cover;
+  background-color: rgba(0,0,0,.40);
+  left: 10px;
+  position: relative;
+  display: inline-block;
+  border-radius: 3px;
+  float: left;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.app .novaAba .albumphoto{
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  left: 30px;
+  position: relative;
+  border-radius: 3px;
+}
+
+.app .novaAba h2{
+  position: absolute;
+  top: -10px;
+  left: 40%;
+  font-size: 18px;
+  color: rgba(0,0,0,.60);
+}
+
+.app .novaAba .musiclist{
+  position: relative;
+  top: 40px;
+}
+
+.app .novaAba .musiclist{
+  position: relative;
+  left: 20px;
+  border-top: 1px solid rgba(0,0,0,.10);
+  padding: 9px;
+}
+
+.app .novaAba .musiclist a{
+  display: block;
+  margin-top: 20px;
+  padding: 10px;
+  border-bottom: 1px solid rgba(0,0,0,.10);
+}
+
+audio{
+  display: none;
+}
+
+#play{
+  position: relative;
+  top: -4px;
+  left: -2px;
+  cursor: pointer;
+}
+
+.app .novaAba .album{
+  position: relative;
+  left: 10px;
+  width: 130px;
+  height: 130px;
+  background-size: cover;
+  background: rgba(0,0,0,.40);
+  top: -40px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-left: 39px;
+  float: left;
+  margin-top: 15px;
+}
+
+.app .novaAba .album2{
+  position: relative;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background: rgba(0,0,0,.40);
+  top: 0px;
+  border-radius: 3px;
+  display: block;
+  margin-left: 25px;
+  margin-top: 20px;
+}
+
+.app .novaAba .album2 a{
+  position: absolute;
+  left: 50px;
+  top: -20px;
+  width: 200px;
+  color: rgba(0,0,0,.80);
+}
+
+.app .bottom .progress{
+  position: absolute;
+  top: -5px;
+  height: 9px;
+  width: 100%;
+  background: rgba(0,0,0,.30);
+}
+
+.app .bottom .progress .subprogress{
+  position: relative;
+  width: 0%;
+  height: 100%;
+  background: var(--font);
+}
