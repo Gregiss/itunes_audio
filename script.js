@@ -183,7 +183,6 @@ function enterAlbum(){
 
 var tocando = false;
 
-function pausar(){
   $(".bottom #play").click(function(){
   if(tocando){
     document.getElementById("my-player").pause();
@@ -195,7 +194,6 @@ function pausar(){
     tocando = true;
   }
     });
-}
 
 function showMusicAlbum(albumName, id){
   console.log(albumName);
@@ -221,7 +219,6 @@ function playMusic(){
     document.getElementById("my-player").setAttribute('src', music[idMusica].mp3);
     document.getElementById("my-player").load();
     document.getElementById("my-player").play();
-    pausar();
     $("#play").html('<i class="fas fa-pause"></i>');
   });
 }
