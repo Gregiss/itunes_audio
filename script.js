@@ -260,10 +260,10 @@ $("#proximaMusica").click(function(){
         });
       }
       MusicaTocando = novaMusica;
-      $(".app .playNow .img").css("background-image", "url('"+music[MusicaTocando].banner+"')");
-      $(".app .playNow #musica").html(music[MusicaTocando].nome);
+      $(".app .playNow .img").css("background-image", "url('"+music[novaMusica].banner+"')");
+      $(".app .playNow #musica").html(music[novaMusica].nome);
       document.getElementById("my-player").pause();
-      document.getElementById("my-player").setAttribute('src', music[MusicaTocando].mp3);
+      document.getElementById("my-player").setAttribute('src', music[novaMusica].mp3);
       document.getElementById("my-player").load();
       document.getElementById("my-player").play();
       $("#play").html('<i class="fas fa-pause"></i>');
