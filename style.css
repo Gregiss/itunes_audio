@@ -118,7 +118,7 @@ a{
   overflow: hidden;
   background-color: #fff;
   z-index: 1000;
-  top: 120px;
+  top: 50px;
   left: 200%;
   transition: 0.2s cubic-bezier(0.005, 0.625, 0.365, 0.0840);
   overflow-x: hidden;
@@ -128,7 +128,7 @@ a{
 .app .novaAba h1{
   padding: 25px;
   position: relative;
-  top: -45px;
+  top: 30px;
 }
 
 .app .list a .bol{
@@ -285,7 +285,7 @@ audio{
   height: 130px;
   background-size: cover;
   background: rgba(0,0,0,.40);
-  top: -40px;
+  top: 0px;
   border-radius: 3px;
   display: inline-block;
   margin-left: 39px;
