@@ -229,6 +229,7 @@ function nextMusic(){
       novaMusica = MusicaTocando + 1;
     }
       MusicaTocando = novaMusica;
+     $(".app .playNow .img").css("background-image", "url('"+music[MusicaTocando].banner+"')");
       $(".app .playNow #musica").html(music[MusicaTocando].nome);
       editPlayer(music[MusicaTocando].mp3);
       $("#play").html('<i class="fas fa-pause"></i>');
