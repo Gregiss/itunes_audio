@@ -107,7 +107,7 @@ a{
   z-index: 0;
   height: 85%;
   position: relative;
-  overflow-y: scroll !important;
+  overflow-y: auto !important;
 }
 
 .app .recentes h1{
