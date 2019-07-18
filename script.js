@@ -255,6 +255,7 @@ function nextMusic(){
       MusicaTocando = novaMusica;
       $(".app .playNow .img").css("background-image", "url('"+music[novaMusica].banner+"')");
       $(".app .playNow #musica").html(music[novaMusica].nome);
+        editPlayer(music[novaMusica].mp3);
       document.getElementById("my-player").pause();
       document.getElementById("my-player").setAttribute('src', music[novaMusica].mp3);
       document.getElementById("my-player").load();
