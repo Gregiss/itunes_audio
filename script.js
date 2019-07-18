@@ -113,6 +113,8 @@ function editPlayer(src){
   audio.volume = 0.1;
   progress();
   nextMusic();
+  document.getElementById("my-player").load();
+  document.getElementById("my-player").play();
 }
 
 function editCate(){
@@ -215,10 +217,6 @@ function randomMusic(){
   $(".app .playNow .img").css("background-image", "url('"+ music[musicRandom].banner+"')");
     $(".app .playNow #musica").html(music[musicRandom].nome);
     editPlayer(music[musicRandom].mp3);
-    document.getElementById("my-player").pause();
-    document.getElementById("my-player").setAttribute('src', music[musicRandom].mp3);
-    document.getElementById("my-player").load();
-    document.getElementById("my-player").play();
     $("#play").html('<i class="fas fa-pause"></i>');
 }
 
@@ -235,9 +233,6 @@ function nextMusic(){
       $(".app .playNow .img").css("background-image", "url('"+music[MusicaTocando].banner+"')");
       $(".app .playNow #musica").html(music[novaMusica].nome);
       editPlayer(music[musicRandom].mp3);
-      document.getElementById("my-player").pause();
-      document.getElementById("my-player").load();
-      document.getElementById("my-player").play();
       $("#play").html('<i class="fas fa-pause"></i>');
   };
   
