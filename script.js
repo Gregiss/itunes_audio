@@ -243,7 +243,7 @@ function nextMusic(){
 }
 
 $("#proximaMusica").click(function(){
-      if(tocando){
+      if(naoTocouNada == false){
       var aud = document.getElementById("my-player");
       var novaMusica = 1;
       if(MusicaTocando >= music.length - 1){
