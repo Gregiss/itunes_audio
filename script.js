@@ -245,15 +245,10 @@ function nextMusic(){
       } else{
         novaMusica = MusicaTocando + 1;
       }
-      var playPromise = aud.play();
       MusicaTocando = novaMusica;
       $(".app .playNow .img").css("background-image", "url('"+music[novaMusica].banner+"')");
       $(".app .playNow #musica").html(music[novaMusica].nome);
         editPlayer(music[novaMusica].mp3);
-      document.getElementById("my-player").pause();
-      document.getElementById("my-player").setAttribute('src', music[novaMusica].mp3);
-      document.getElementById("my-player").load();
-      document.getElementById("my-player").play();
       $("#play").html('<i class="fas fa-pause"></i>');
       tocando = true;
       }
@@ -285,10 +280,6 @@ function playMusic(){
     $(".app .playNow .img").css("background-image", "url('"+ music[idMusica].banner+"')");
     $(".app .playNow #musica").html(music[idMusica].nome);
     editPlayer(music[idMusica].mp3);
-    document.getElementById("my-player").pause();
-    document.getElementById("my-player").setAttribute('src', music[idMusica].mp3);
-    document.getElementById("my-player").load();
-    document.getElementById("my-player").play();
     $("#play").html('<i class="fas fa-pause"></i>');
   });
   $(".albums .musiclist a").click(function(){
@@ -299,10 +290,6 @@ function playMusic(){
     $(".app .playNow .img").css("background-image", "url('"+ music[idMusica].banner+"')");
     $(".app .playNow #musica").html(music[idMusica].nome);
     editPlayer(music[idMusica].mp3);
-    document.getElementById("my-player").pause();
-    document.getElementById("my-player").setAttribute('src', music[idMusica].mp3);
-    document.getElementById("my-player").load();
-    document.getElementById("my-player").play();
     $("#play").html('<i class="fas fa-pause"></i>');
   });
 }
