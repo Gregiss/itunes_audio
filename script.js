@@ -286,6 +286,7 @@ function playMusic(){
     MusicaTocando = {id: idMusica};
     $(".app .playNow .img").css("background-image", "url('"+ music[idMusica].banner+"')");
     $(".app .playNow #musica").html(music[idMusica].nome);
+    editPlayer(music[idMusica].mp3);
     document.getElementById("my-player").pause();
     document.getElementById("my-player").setAttribute('src', music[idMusica].mp3);
     document.getElementById("my-player").load();
