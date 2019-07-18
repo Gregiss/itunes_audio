@@ -112,6 +112,7 @@ function editPlayer(src){
   audio = document.getElementById('my-player');
   audio.volume = 0.1;
   progress();
+  nextMusic();
 }
 
 function editCate(){
@@ -240,9 +241,8 @@ function nextMusic(){
       document.getElementById("my-player").play();
       $("#play").html('<i class="fas fa-pause"></i>');
   };
-}
-
-$("#proximaMusica").click(function(){
+  
+  $("#proximaMusica").click(function(){
       if(naoTocouNada == false){
       var aud = document.getElementById("my-player");
       var novaMusica = 1;
@@ -263,6 +263,9 @@ $("#proximaMusica").click(function(){
       tocando = true;
       }
 });
+  
+}
+
 
 function showMusicAlbum(albumName, id){
   console.log(albumName);
