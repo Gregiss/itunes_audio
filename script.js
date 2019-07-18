@@ -150,19 +150,11 @@ function addM(){
 }
 
 function addInHtmlMusic(){
-  for(var i = 0; i < music.length; i++){
-    if(i > 0){
-    if(music[i].album == music[i - 1].album){
-      var banner = music[i].banner;
-    $(".albums .before").html('<div class="album" id="'+i+'" data-id="'+i+'"></div>');
-    $(".albums #" + i).css("background-image", "url('"+banner+"')");
-    } else{
-      var banner = music[i].banner;
-    $(".albums .before").before('<div class="album" id="'+i+'" data-id="'+i+'"></div>');
-    $(".albums #" + i).css("background-image", "url('"+banner+"')");
-    }
-    }
-  }
+  $(".albums").html("<div class='before'></div> <div class='musiclist'><div class='before'></div></div>");
+    for(var i = music.length - 3; i < music.length; i++){
+        $(".albums .musiclist .before").before('<a data-id="'+i+'"> '+ music[i].nome +' </a>');
+      }
+    playMusic();
 }
 
 function enterAlbum(){
@@ -293,10 +285,23 @@ function playMusic(){
     document.getElementById("my-player").play();
     $("#play").html('<i class="fas fa-pause"></i>');
   });
+  $(".albums .musiclist a").click(function(){
+    naoTocouNada = false;
+    tocando = true;
+    var idMusica = $(this).data("id");
+    MusicaTocando = {id: idMusica};
+    $(".app .playNow .img").css("background-image", "url('"+ music[idMusica].banner+"')");
+    $(".app .playNow #musica").html(music[idMusica].nome);
+    editPlayer(music[idMusica].mp3);
+    document.getElementById("my-player").pause();
+    document.getElementById("my-player").setAttribute('src', music[idMusica].mp3);
+    document.getElementById("my-player").load();
+    document.getElementById("my-player").play();
+    $("#play").html('<i class="fas fa-pause"></i>');
+  });
 }
 
 $(document).ready(function(){
-  addCategories('Álbuns');
   addCategories('Músicas');
   clickInBibli();
   returnNovaAba();
