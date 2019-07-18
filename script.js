@@ -214,7 +214,6 @@ function randomMusic(){
   naoTocouNada = false;
   var musicRandom = Math.floor(Math.random() * music.length);
   MusicaTocando = musicRandom;
-  $(".app .playNow .img").css("background-image", "url('"+ music[musicRandom].banner+"')");
     $(".app .playNow #musica").html(music[musicRandom].nome);
     editPlayer(music[musicRandom].mp3);
     $("#play").html('<i class="fas fa-pause"></i>');
@@ -230,7 +229,6 @@ function nextMusic(){
       novaMusica = MusicaTocando + 1;
     }
       MusicaTocando = novaMusica;
-      $(".app .playNow .img").css("background-image", "url('"+music[MusicaTocando].banner+"')");
       $(".app .playNow #musica").html(music[MusicaTocando].nome);
       editPlayer(music[MusicaTocando].mp3);
       $("#play").html('<i class="fas fa-pause"></i>');
