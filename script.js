@@ -231,8 +231,8 @@ function nextMusic(){
     }
       MusicaTocando = novaMusica;
       $(".app .playNow .img").css("background-image", "url('"+music[MusicaTocando].banner+"')");
-      $(".app .playNow #musica").html(music[novaMusica].nome);
-      editPlayer(music[musicRandom].mp3);
+      $(".app .playNow #musica").html(music[MusicaTocando].nome);
+      editPlayer(music[MusicaTocando].mp3);
       $("#play").html('<i class="fas fa-pause"></i>');
   };
   
@@ -246,9 +246,9 @@ function nextMusic(){
         novaMusica = MusicaTocando + 1;
       }
       MusicaTocando = novaMusica;
-      $(".app .playNow .img").css("background-image", "url('"+music[novaMusica].banner+"')");
-      $(".app .playNow #musica").html(music[novaMusica].nome);
-        editPlayer(music[novaMusica].mp3);
+      $(".app .playNow .img").css("background-image", "url('"+music[MusicaTocando].banner+"')");
+      $(".app .playNow #musica").html(music[MusicaTocando].nome);
+        editPlayer(music[MusicaTocando].mp3);
       $("#play").html('<i class="fas fa-pause"></i>');
       tocando = true;
       }
