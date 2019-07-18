@@ -101,9 +101,9 @@ a{
 .todo{
   transition: 3s cubic-bezier(0.005, 0.625, 0.365, 0.0840);
   z-index: 0;
-  height: 65%;
-  position: absolute;
-  overflow-y: auto !important;
+  height: 85%;
+  position: relative;
+  overflow-y: scroll !important;
 }
 
 .app .recentes h1{
@@ -118,7 +118,7 @@ a{
 .app .novaAba{
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 82%;
   overflow: hidden;
   background-color: #fff;
   z-index: 1000;
@@ -335,6 +335,14 @@ audio{
   width: 0%;
   height: 100%;
   background: var(--font);
+}
+
+i{
+  color: var(--font) !important;
+}
+
+h1{
+  color: #000 !important;
 }
 
 .albums .musiclist a{
