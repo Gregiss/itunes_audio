@@ -236,7 +236,6 @@ function nextMusic(){
       $(".app .playNow #musica").html(music[novaMusica].nome);
       editPlayer(music[musicRandom].mp3);
       document.getElementById("my-player").pause();
-      document.getElementById("my-player").setAttribute('src', music[MusicaTocando].mp3);
       document.getElementById("my-player").load();
       document.getElementById("my-player").play();
       $("#play").html('<i class="fas fa-pause"></i>');
