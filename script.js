@@ -111,6 +111,7 @@ function editPlayer(src){
   $("#player").html("<audio id='my-player' controls> <source src='"+src+"' type='audio/mp3'> </audio>");
   audio = document.getElementById('my-player');
   audio.volume = 0.1;
+  progress();
 }
 
 function editCate(){
@@ -319,9 +320,11 @@ $(document).ready(function(){
   nextMusic();
 });
 
+function progress(){
 var player = document.getElementById('my-player');    
 player.addEventListener("timeupdate", function() {
     var currentTime = player.currentTime;
     var duration = player.duration;
     $('.progress .subprogress').stop(true,true).animate({'width':(currentTime +.25)/duration*100+'%'},250,'linear');
 });
+}
