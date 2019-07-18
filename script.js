@@ -274,7 +274,7 @@ function playMusic(){
     naoTocouNada = false;
     tocando = true;
     var idMusica = $(this).data("id");
-    MusicaTocando = {id: idMusica};
+    MusicaTocando = idMusica;
     $(".app .playNow .img").css("background-image", "url('"+ music[idMusica].banner+"')");
     $(".app .playNow #musica").html(music[idMusica].nome);
     editPlayer(music[idMusica].mp3);
@@ -284,7 +284,7 @@ function playMusic(){
     naoTocouNada = false;
     tocando = true;
     var idMusica = $(this).data("id");
-    MusicaTocando = {id: idMusica};
+    MusicaTocando = idMusica;
     $(".app .playNow .img").css("background-image", "url('"+ music[idMusica].banner+"')");
     $(".app .playNow #musica").html(music[idMusica].nome);
     editPlayer(music[idMusica].mp3);
