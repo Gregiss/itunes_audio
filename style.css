@@ -336,3 +336,12 @@ audio{
   height: 100%;
   background: var(--font);
 }
+
+.albums .musiclist a{
+  display: block;
+  width: 100%;
+  left: 30px;
+  position: relative;
+  font-size: 18px;
+  margin-top: 10px;
+}
