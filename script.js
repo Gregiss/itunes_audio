@@ -271,17 +271,7 @@ function showMusicAlbum(albumName, id){
 }
 
 function playMusic(){
-  $(".app .novaAba .musiclist a").click(function(){
-    naoTocouNada = false;
-    tocando = true;
-    var idMusica = $(this).data("id");
-    MusicaTocando = idMusica;
-    $(".app .playNow .img").css("background-image", "url('"+ music[idMusica].banner+"')");
-    $(".app .playNow #musica").html(music[idMusica].nome);
-    editPlayer(music[idMusica].mp3);
-    $("#play").html('<i class="fas fa-pause"></i>');
-  });
-  $(".albums .musiclist a").click(function(){
+  $(".musiclist a").click(function(){
     naoTocouNada = false;
     tocando = true;
     var idMusica = $(this).data("id");
