@@ -357,3 +357,10 @@ h1{
   font-size: 18px;
   margin-top: 10px;
 }
+
+@media screen and (max-width 420px){
+	.app{
+	 width: 100%;		
+	}
+
+}
