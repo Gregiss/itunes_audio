@@ -359,7 +359,7 @@ h1{
   margin-top: 10px;
 }
 
-@media screen and (min-width 420px){
+@media screen and (max-width 420px){
 	.app{
 	 width: 100%;		
 	}
