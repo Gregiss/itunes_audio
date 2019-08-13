@@ -280,6 +280,7 @@ function playMusic(){
     $(".app .playNow #musica").html(music[idMusica].nome);
     editPlayer(music[idMusica].mp3);
     $("#play").html('<i class="fas fa-pause"></i>');
+    document.title = music[idMusica].nome;
   });
 }
 
